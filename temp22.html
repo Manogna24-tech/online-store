@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Ball</title>
+    <style>
+        body {
+            height: 100vh;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <img src="assets/images/ball.png" width="200px" id="ball"/>
+
+    <script>
+        let ball = document.getElementById("ball");
+        ball.style.position = "absolute";
+        let topPos = 0; // Initial top position
+        let leftPos = 0; // Initial left position
+
+        document.body.onkeydown = (e) => {
+            if (e.key === "ArrowRight") {
+                leftPos += 5; // Move right
+            } else if (e.key === "ArrowLeft") {
+                leftPos -= 5; // Move left
+            } else if (e.key === "ArrowDown") {
+                topPos += 5; // Move down
+            } else if (e.key === "ArrowUp") {
+                topPos -= 5; // Move up
+            }
+
+            ball.style.left = leftPos + "px";
+            ball.style.top = topPos + "px";
+        };
+    </script>
+</body>
+</html>
